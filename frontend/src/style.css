@@ -1,0 +1,76 @@
+/*  le corps de la page */
+body {
+    font-family: Arial, sans-serif; /* Police de caractères */
+    background-color: #f4f4f4; /* Couleur de fond */
+  }
+  
+  /*  la barre de navigation Bootstrap */
+  .navbar {
+    background-color: #343a40; /* Couleur de fond de la barre de navigation */
+    border-bottom: 4px solid #f8f9fa; /* Ligne de séparation en bas de la barre de navigation */
+    border-top: 4px solid #f8f9fa; /* Ligne de séparation en haut de la barre de navigation */
+  }
+  
+  /* les boutons Bootstrap */
+  .btn-primary {
+    background-color: #007bff; /* Couleur de fond des boutons primaires */
+    border: none; /* Supprime la bordure */
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+  }
+  
+  /*  les alertes Bootstrap */
+  .alert {
+    border-radius: 0; /* Supprime les coins arrondis */
+  }
+  
+  /*  les cartes Bootstrap */
+  .card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  }
+  
+  /* les liens Bootstrap */
+  .card-link {
+    color: #007bff; 
+  }
+  
+  /* les liens au survol */
+  .card-link:hover {
+    text-decoration: underline; 
+  }
+  
+  /* les titres */
+  h1, h2, h3, h4, h5, h6 {
+    color: #333; /* Couleur du texte des titres */
+    font-weight: bold; /* Gras */
+  }
+  
+  /* les marges autour des éléments */
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* les couleurs de texte */
+  .text-primary {
+    color: #007bff; 
+  }
+  
+  .text-secondary {
+    color: #6c757d; 
+  }
+  
+  /* les liens */
+  a {
+    color: #007bff; 
+  }
+  
+  a:hover {
+    text-decoration: underline; 
+  }
+  

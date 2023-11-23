@@ -1,0 +1,48 @@
+version: '3.1'
+
+services:
+  database:
+    image: mysql:latest
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: passwordroot
+      MYSQL_DATABASE: app_database
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password1234
+    ports:
+      - "40001:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: database
+      PMA_USER: root
+      PMA_PASSWORD: passwordroot
+    ports:
+      - "9090:80"
+    depends_on:
+      - database
+    restart: always
+  
+  flask-api:
+    build:
+      context: .
+      dockerfile : ./api/Dockerfile
+    depends_on:
+      - database
+    ports:
+      - "9000:5000"
+
+  web: # to refresh : sudo docker-compose build --no-cache && sudo docker-compose up -d --no-deps web
+    build:
+      context: .
+      dockerfile: ./frontend/Dockerfile
+    ports:
+      - "10000:3000"
+    environment:
+      - NODE_ENV=development
